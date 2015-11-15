@@ -144,5 +144,4 @@ public class GestorReplicacion {
         this.masterConectNow = masterConectNow;
     }
     
-    
 }
