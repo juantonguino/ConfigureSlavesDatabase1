@@ -23,6 +23,17 @@ public class Run {
              else if(gestor.getMasterConectNow()==3&&gestor.showMasterOnlineDatabase3()==false){
                  gestor.changeMasterTo2();
              }
+             if(gestor.showMasterOnlineDatabase2()==false&&gestor.showMasterOnlineDatabase3()==false){
+                 gestor.setMasterConectNow(0);
+             }
+             if(gestor.getMasterConectNow()==0){
+                 if(gestor.showMasterOnlineDatabase3()==true){
+                     gestor.changeMasterTo3();
+                 }
+                 else if(gestor.showMasterOnlineDatabase2()==true){
+                     gestor.changeMasterTo2();
+                 }
+             }
          }
     }
 }
