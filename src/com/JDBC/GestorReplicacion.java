@@ -17,8 +17,6 @@ import java.util.logging.Logger;
  */
 public class GestorReplicacion {
     
-    public final static int ID_DATA_BASE=1;
-    
     private int masterConectNow;
     
     private FachadaDB fachadaDB;
@@ -55,6 +53,7 @@ public class GestorReplicacion {
             String masterLogFile = resultado[0];
             String Pos = resultado[1];
             String stopSlave = "STOP SLAVE";
+            String resertSlave="RESET SLAVE";
             String changeMasterTo = "CHANGE MASTER TO "
                     + "MASTER_HOST = '192.168.0.202', "
                     + "MASTER_USER = 'user12', "
@@ -62,6 +61,10 @@ public class GestorReplicacion {
                     + "MASTER_LOG_FILE = '" + masterLogFile + "', "
                     + "MASTER_LOG_POS = " + Pos + ";";
             String startSlave = "START SLAVE";
+            fachadaDB.agergarEliminarModificar(stopSlave);
+            fachadaDB.agergarEliminarModificar(resertSlave);
+            fachadaDB.agergarEliminarModificar(changeMasterTo);
+            fachadaDB.agergarEliminarModificar(startSlave);
             masterConectNow=2;
             retorno = true;
         } catch (Exception e) {
@@ -78,6 +81,7 @@ public class GestorReplicacion {
             String masterLogFile = resultado[0];
             String Pos = resultado[1];
             String stopSlave = "STOP SLAVE";
+            String resertSlave="RESET SLAVE";
             String changeMasterTo = "CHANGE MASTER TO "
                     + "MASTER_HOST = '192.168.0.203', "
                     + "MASTER_USER = 'user13', "
@@ -85,6 +89,10 @@ public class GestorReplicacion {
                     + "MASTER_LOG_FILE = '" + masterLogFile + "', "
                     + "MASTER_LOG_POS = " + Pos + ";";
             String startSlave = "START SLAVE";
+            fachadaDB.agergarEliminarModificar(stopSlave);
+            fachadaDB.agergarEliminarModificar(resertSlave);
+            fachadaDB.agergarEliminarModificar(changeMasterTo);
+            fachadaDB.agergarEliminarModificar(startSlave);
             masterConectNow=3;
             retorno = true;
         } catch (Exception e) {
