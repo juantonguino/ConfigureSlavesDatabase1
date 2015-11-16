@@ -26,7 +26,7 @@ public class GestorReplicacion {
     public GestorReplicacion() {
         fachadaDB= new FachadaDB();
         connection= fachadaDB.crearConexion();
-        masterConectNow=2;
+        masterConectNow=0;
     }
     
     public String showMasterStatus(){
