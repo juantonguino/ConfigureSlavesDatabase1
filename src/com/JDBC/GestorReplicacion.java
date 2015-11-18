@@ -21,11 +21,8 @@ public class GestorReplicacion {
     
     private FachadaDB fachadaDB;
     
-    private Connection connection;
-
     public GestorReplicacion() {
         fachadaDB= new FachadaDB();
-        connection= fachadaDB.crearConexion();
         masterConectNow=0;
     }
     
